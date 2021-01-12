@@ -94,8 +94,8 @@ public class SceneController : MonoBehaviour
         }
 
 
-        int id = Random.Range(0, images.Length);
-        originCard.SetCard(id, images[id]);
+        //int id = Random.Range(0, images.Length);
+        //originCard.SetCard(id, images[id]);
     }
 
     private int[] ShuffleArray(int[] numbers) 
