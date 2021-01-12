@@ -17,14 +17,46 @@ public class SceneController : MonoBehaviour
     private MemoryCard _firstRevealed;
     private MemoryCard _secondRevealed;
 
+    private int _score = 0;
+
     public bool canReveal 
     {
         get { return _secondRevealed == null; } // если вторая карта уже открыта, то false
     }
 
+    private IEnumerator CheckMatch()
+    {
+        if (_firstRevealed.id == _secondRevealed.id)
+        {
+            _score++; // если карты равны, то счет увеличиваем на единицу
+            Debug.Log("Score: " + _score);
+        }
+        else
+        {
+            yield return new WaitForSeconds(.5f);
+            _firstRevealed.Unreveal(); // закрываем несовпадающие карты
+            _secondRevealed.Unreveal();
+        }
+
+        _firstRevealed = null;
+        _secondRevealed = null;
+    }
+
     public void CardRevealed(MemoryCard card) 
-    { 
-    
+    {
+        // сохранение карт в одной из двух переменных
+        // в зависимости от тогоа, какая из них свободна
+        if (_firstRevealed == null)
+        {
+            _firstRevealed = card;
+        } 
+        else 
+        {
+            _secondRevealed = card;
+            Debug.Log("Match? " + (_firstRevealed.id == _secondRevealed.id));
+            StartCoroutine(CheckMatch());
+            
+        }
     }
 
     // Start is called before the first frame update
