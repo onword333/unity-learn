@@ -14,10 +14,26 @@ public class SceneController : MonoBehaviour
     [SerializeField] private MemoryCard originCard;
     [SerializeField] private Sprite[] images;
 
+    private MemoryCard _firstRevealed;
+    private MemoryCard _secondRevealed;
+
+    public bool canReveal 
+    {
+        get { return _secondRevealed == null; } // если вторая карта уже открыта, то false
+    }
+
+    public void CardRevealed(MemoryCard card) 
+    { 
+    
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         Vector3 startPos = originCard.transform.position;
+
+        int[] numbers = {0, 0, 1, 1, 2, 2, 3, 3};
+        numbers = ShuffleArray(numbers);
 
         for (int i = 0; i < gridCols; i++)
         {
@@ -33,7 +49,9 @@ public class SceneController : MonoBehaviour
                     card = Instantiate(originCard) as MemoryCard;
                 }
 
-                int _id = Random.Range(0, images.Length);
+                int index = j * gridCols + i;
+
+                int _id = numbers[index];
                 card.SetCard(_id, images[_id]);
 
                 float posX = (offsetX * i) + startPos.x;
@@ -45,6 +63,20 @@ public class SceneController : MonoBehaviour
 
         int id = Random.Range(0, images.Length);
         originCard.SetCard(id, images[id]);
+    }
+
+    private int[] ShuffleArray(int[] numbers) 
+    {
+        int[] newArray = numbers.Clone() as int[];
+
+        for (int i = 0; i < newArray.Length; i++)
+        {
+            int tmp = newArray[i];
+            int r = Random.Range(i, newArray.Length);
+            newArray[i] = newArray[r];
+            newArray[r] = tmp;
+        }
+        return newArray;
     }
 
     // Update is called once per frame

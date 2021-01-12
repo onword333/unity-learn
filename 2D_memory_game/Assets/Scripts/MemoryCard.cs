@@ -21,10 +21,19 @@ public class MemoryCard : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (cardBack.activeSelf)
+        // canReveal - одновременно могут быть открыты только две карты
+        if (cardBack.activeSelf && controller.canReveal)
         {
             cardBack.SetActive(false);
-            //controller.CardRevealed(this);
+            controller.CardRevealed(this);
         }
+    }
+
+    /// <summary>
+    /// Позволяет компоненту SceneController снова скрыть карту
+    /// </summary>
+    public void Unreveal() 
+    {
+        cardBack.SetActive(true);
     }
 }
