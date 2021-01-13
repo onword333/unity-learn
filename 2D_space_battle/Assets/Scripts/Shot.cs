@@ -17,10 +17,9 @@ public class Shot : MonoBehaviour
     void Start()
     {
         // проблема в том, что после того как gameObject уничтожен
-        // невозможно больше стрелять
-        //Destroy(this.gameObject, 20); // 20 секунд, 
-        
-
+        // невозможно больше стрелять.
+        // Решение: сделать из GameObject - prefab
+        Destroy(gameObject, 20); // 20 секунд, 
     }
 
     // Update is called once per frame

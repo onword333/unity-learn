@@ -579,8 +579,13 @@ PrefabInstance:
         type: 3}
       propertyPath: shotPrefab
       value: 
-      objectReference: {fileID: 374834039496588724, guid: 8bcce74285def93498adcfc67d0920cb,
+      objectReference: {fileID: 3142370269213416590, guid: 8bcce74285def93498adcfc67d0920cb,
         type: 3}
+    - target: {fileID: 2407290672488071032, guid: a19f63604ef6ecf47b16565d7b4bf115,
+        type: 3}
+      propertyPath: shootingRate
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5945748187094597579, guid: a19f63604ef6ecf47b16565d7b4bf115,
         type: 3}
       propertyPath: m_RootOrder

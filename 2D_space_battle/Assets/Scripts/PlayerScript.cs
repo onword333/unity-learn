@@ -21,20 +21,6 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void FixedUpdate()
-    {
-        
-
-        float inputX = Input.GetAxis("Horizontal");
-        float inputY = Input.GetAxis("Vertical");
-
-        movement = new Vector2(inputX, inputY);
-
-        rb.velocity = movement * speed;
-
         // 5 - стрельба
         bool shoot = Input.GetButtonDown("Fire1");
 
@@ -46,5 +32,14 @@ public class PlayerScript : MonoBehaviour
                 weapon.Attack(false);
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
+        
+        movement = new Vector2(inputX, inputY);
+        rb.velocity = movement * speed;
     }
 }

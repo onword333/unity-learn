@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     public Transform shotPrefab;
     
     // время перезарядки
-    public float shootingRate = 10.25f;
+    public float shootingRate = 0.25f;
 
     // перезарядка
     private float shootCooldown;
@@ -44,7 +44,7 @@ public class Weapon : MonoBehaviour
             var shotTransform = Instantiate(shotPrefab);
 
             // выстрел будет жить 20 сек
-            Destroy(shotTransform.gameObject, 20);
+            //Destroy(shotTransform.gameObject, 20);
 
             // определим положением
             shotTransform.position = transform.position;
