@@ -157,7 +157,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 774278977}
   - component: {fileID: 774278980}
   - component: {fileID: 774278981}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.41218138}
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 1666307266}
   - component: {fileID: 1666307268}
   - component: {fileID: 1666307267}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,6 +443,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1666307263}
+  isGrounded: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
+  jumpForce: 10
 --- !u!50 &1666307267
 Rigidbody2D:
   serializedVersion: 4
