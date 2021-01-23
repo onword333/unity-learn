@@ -32,14 +32,20 @@ public class Player : MonoBehaviour
         jump();
     }
 
+    private void FixedUpdate()
+    {
+        jump();
+    }
+
     private void jump() 
     {
         if (isJumping && onGround)
         {
-            Vector2 movement = Vector2.up * jumpForce;
-            rb2d.AddForce(movement, ForceMode2D.Impulse);
+            Vector2 movement = new Vector2(0, 1);
+            rb2d.AddForce(movement * jumpForce, ForceMode2D.Impulse);
             onGround = false;
             animator.SetBool("isJump", true);
+            GameControll.instance.addPoints();
         }        
     }
 
