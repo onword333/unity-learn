@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControll : MonoBehaviour
+public class oldPlayerControll : MonoBehaviour
 {
 
     private Collider2D myCollider;
