@@ -297,8 +297,9 @@ GameObject:
   - component: {fileID: 527497951}
   - component: {fileID: 527497950}
   - component: {fileID: 527497949}
+  - component: {fileID: 527497953}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Rhinoceros
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,6 +417,18 @@ Transform:
   m_Father: {fileID: 631781003}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &527497953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527497948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb8e34b135b58e4098ba39268ed33d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &631781002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e027155bed403e14f97bd514a9c6c1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -3.5
+  scrollSpeed: -4.5
   TextScore: {fileID: 1034149208}
   gameOver: 0
 --- !u!50 &1666307267

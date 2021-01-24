@@ -35,4 +35,7 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
-*.apk
+#*.apk
+
+# examples assets
+assets_example/
