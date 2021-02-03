@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
             rb2d.AddForce(movement * jumpForce, ForceMode2D.Impulse);
             onGround = false;
             animator.SetBool("isJump", true);
-            GameControll.instance.addPoints();
         }        
     }
 
