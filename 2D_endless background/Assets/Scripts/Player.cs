@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        jump();
+        //jump();
     }
 
     private void jump() 
