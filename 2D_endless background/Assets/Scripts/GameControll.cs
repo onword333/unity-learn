@@ -10,6 +10,7 @@ public class GameControll : MonoBehaviour
     public static GameControll instance;
 
     private int score = 0;
+    private int controllPoint = 0;
 
     public Text scoreText;
     public float scrollSpeed = -1.5f;
@@ -54,11 +55,25 @@ public class GameControll : MonoBehaviour
         }
 
         score++;
+        controllPoint++;
+
         scoreText.text = "Score: " + score;
+
+        // если досдигли контрольной точки,
+        // повышаем сложность игры
+        if (controllPoint >= 5)
+        {
+            controllPoint = 0;
+            addScrollSpeed();
+        }
     }
 
     public void PlayerCrashed() 
     {
         gameOver = true;
+    }
+
+    public void addScrollSpeed() {
+        scrollSpeed += -5f;
     }
 }

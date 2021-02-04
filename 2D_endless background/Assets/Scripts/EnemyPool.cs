@@ -11,7 +11,7 @@ public class EnemyPool : MonoBehaviour
     private Vector2 objectPoolPosition = new Vector2(-15f, -7f);
     private GameObject[] enemies;
     private float timeSinceLastSpawned;
-    private float spawnYPosition = -1f;
+    private float spawnYPosition = -3f;
     private int currentEnemy = 0;
 
     // Start is called before the first frame update

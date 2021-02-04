@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1034149210}
-  scrollSpeed: -4.5
+  scrollSpeed: -1.5
   TextScoreObj: {fileID: 0}
   gameOver: 0
 --- !u!4 &506893001
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesPoolSize: 5
-  enemiesPrefab: {fileID: 1582378032543722506, guid: 06870dd50c99ae24896147f3ad0e7df5,
+  enemiesPrefab: {fileID: 73550392940371930, guid: 06870dd50c99ae24896147f3ad0e7df5,
     type: 3}
   spanwRate: 4
 --- !u!1 &519420028
