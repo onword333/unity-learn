@@ -31,11 +31,17 @@ public class EnemyPool : MonoBehaviour
 
         if (GameControll.instance.gameOver == false && timeSinceLastSpawned >= spanwRate)
         {
-            timeSinceLastSpawned = 0;
-            float spawnXPosition = Random.Range(11f, 17f);
-            enemies[currentEnemy].transform.position = new Vector2(spawnXPosition, spawnYPosition);
             Rigidbody2D rb2d = enemies[currentEnemy].GetComponent<Rigidbody2D>();
+            AudioSource audioSource = enemies[currentEnemy].GetComponent<AudioSource>();
+            float spawnXPosition = Random.Range(11f, 17f);
+
+            audioSource.Play();
+
+            timeSinceLastSpawned = 0;
+            
+            enemies[currentEnemy].transform.position = new Vector2(spawnXPosition, spawnYPosition);
             rb2d.velocity = Vector2.zero;
+         
             currentEnemy++;
             if (currentEnemy >= enemiesPoolSize)
             {

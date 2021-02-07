@@ -11,10 +11,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2d;
     private bool isJumping;
     private bool onGround = false;
+    private AudioSource audioSource;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -55,7 +57,8 @@ public class Player : MonoBehaviour
 
         if (GameControll.instance.gameOver)
         {
-            animator.SetBool("isCrashed", true);
+            audioSource.Play();
+            animator.SetBool("isCrashed", true);            
         }
         
     }

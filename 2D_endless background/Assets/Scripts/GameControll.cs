@@ -9,6 +9,7 @@ public class GameControll : MonoBehaviour
 
     public static GameControll instance;
 
+    private AudioSource audioSource;
     private int score = 0;
     private int controllPoint = 0;
 
@@ -34,7 +35,7 @@ public class GameControll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();   
     }
 
     // Update is called once per frame
@@ -68,9 +69,15 @@ public class GameControll : MonoBehaviour
         }
     }
 
-    public void PlayerCrashed() 
+    public void gameIsOver()
     {
         gameOver = true;
+        audioSource.Stop();
+    }
+
+    public void PlayerCrashed() 
+    {
+        gameIsOver();
     }
 
     public void addScrollSpeed() {
