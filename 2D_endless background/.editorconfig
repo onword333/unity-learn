@@ -1,0 +1,4 @@
+root = true
+
+[*.{cs,sql,config}]
+charset = utf-8
